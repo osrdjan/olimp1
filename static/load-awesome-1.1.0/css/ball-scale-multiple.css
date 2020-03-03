@@ -1,0 +1,243 @@
+/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso <@DanielCardoso>
+ * Licensed under MIT
+ */
+.la-ball-scale-multiple,
+.la-ball-scale-multiple > div {
+    position: relative;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.la-ball-scale-multiple {
+    display: block;
+    font-size: 0;
+    color: #fff;
+}
+
+.la-ball-scale-multiple.la-dark {
+    color: #333;
+}
+
+.la-ball-scale-multiple > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
+}
+
+.la-ball-scale-multiple {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.la-ball-scale-multiple > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    opacity: 0;
+    /* -webkit-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+       -moz-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+         -o-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+            animation: ball-scale-multiple 1s 0s ease-in-out infinite; */
+}
+
+.logo:hover .la-ball-scale-multiple>div {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+    -moz-animation: ball-scale 1s 0s ease-in-out infinite;
+    -o-animation: ball-scale 1s 0s ease-in-out infinite;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+}
+
+.logo:hover .la-ball-scale-multiple > div:nth-child(2) {
+    -webkit-animation-delay: .2s;
+       -moz-animation-delay: .2s;
+         -o-animation-delay: .2s;
+            animation-delay: .2s;
+}
+
+.logo:hover .la-ball-scale-multiple > div:nth-child(3) {
+    -webkit-animation-delay: .4s;
+       -moz-animation-delay: .4s;
+         -o-animation-delay: .4s;
+            animation-delay: .4s;
+}
+
+.la-ball-scale-multiple.la-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.la-ball-scale-multiple.la-sm > div {
+    width: 16px;
+    height: 16px;
+}
+
+.la-ball-scale-multiple.la-2x {
+    width: 64px;
+    height: 64px;
+}
+
+.la-ball-scale-multiple.la-2x > div {
+    width: 64px;
+    height: 64px;
+}
+
+.la-3x {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 19px;
+    right: 26px;
+    /* transform: translate(169%, -46%); */
+}
+
+.custom-la-3x {
+    top: 14px;
+    right: 20px;
+}
+
+.custom-la-3x-transition {
+    transition: all 0.1s ease-in-out;
+    /* transition: none; */
+}
+
+.la-ball-scale-multiple.la-3x > div {
+    width: 30px;
+    height: 30px;
+}
+
+/*
+ * Animation
+ */
+@-webkit-keyframes ball-scale-multiple {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+    5% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@-moz-keyframes ball-scale-multiple {
+    0% {
+        opacity: 0;
+        -moz-transform: scale(0);
+             transform: scale(0);
+    }
+    5% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: scale(1);
+             transform: scale(1);
+    }
+}
+@-o-keyframes ball-scale-multiple {
+    0% {
+        opacity: 0;
+        -o-transform: scale(0);
+           transform: scale(0);
+    }
+    5% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        -o-transform: scale(1);
+           transform: scale(1);
+    }
+}
+@keyframes ball-scale-multiple {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0);
+           -moz-transform: scale(0);
+             -o-transform: scale(0);
+                transform: scale(0);
+    }
+    5% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+           -moz-transform: scale(1);
+             -o-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 820px){
+
+    .la-ball-scale-multiple > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        opacity: 0;
+        -webkit-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+        -moz-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+        -o-animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+        animation: ball-scale-multiple 1s 0s ease-in-out infinite;
+    }
+
+    .logo .la-ball-scale-multiple>div {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        opacity: 0;
+        -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+        -moz-animation: ball-scale 1s 0s ease-in-out infinite;
+        -o-animation: ball-scale 1s 0s ease-in-out infinite;
+        animation: ball-scale 1s 0s ease-in-out infinite;
+    }
+    
+    .logo .la-ball-scale-multiple > div:nth-child(2) {
+        -webkit-animation-delay: .2s;
+           -moz-animation-delay: .2s;
+             -o-animation-delay: .2s;
+                animation-delay: .2s;
+    }
+    
+    .logo .la-ball-scale-multiple > div:nth-child(3) {
+        -webkit-animation-delay: .4s;
+           -moz-animation-delay: .4s;
+             -o-animation-delay: .4s;
+                animation-delay: .4s;
+    }
+
+    .la-3x {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 19px;
+        right: 26px;
+        /* transform: translate(169%, -46%); */
+    }
+
+    .custom-la-3x {
+        top: 14px;
+        right: 20px;
+    }
+
+}
