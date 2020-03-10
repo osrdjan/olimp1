@@ -14,12 +14,24 @@
     <link rel="stylesheet" href="static/load-awesome-1.1.0/css/ball-scale-multiple.css">
     <link rel="stylesheet" href="static/load-awesome-1.1.0/css/ball-scale.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap&subset=latin-ext" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap&subset=latin-ext"
+        rel="stylesheet">
     <!-- <script  src="https://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="  crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <!-- Preloader && To_top -->
+    <div class="sk-center">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <a href="#" id="to-top"><i class="fas fa-chevron-square-up"></i></a>
+    <!-- Preloader && To_top END-->
 
     <!-- Navigacija  -->
     <nav class="navbar">
@@ -50,7 +62,7 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <!-- Navigacija kraj -->
+    <!-- Navigacija END -->
 
     <!-- Baner -->
     <section id="banner">
@@ -60,8 +72,9 @@
         <!-- Tekst  -->
         <div class="banner-txt">
             <h1 id="shuffle1" style="opacity: 1;">Our Mission:</h1>
-            <h1 id="shuffle2">Turn </h1>
+            <h1 id="shuffle2">Turn your data into a business advantage</h1>
         </div>
+        <div id="button-continue"><a href="#about">About</a></div>
     </section>
     <!-- Baner kraj -->
 
@@ -193,15 +206,10 @@
     <div id="contact">
         <div id="contact-header">
 
-            <div class="contact-map">
-                <div class="google-map"><iframe frameborder="0" style="border:0"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJlTpC7E_TWUcRBrVW8MPUeSc"
-                        allowfullscreen=""></iframe></div>
-            </div>
 
             <div id="contact-form-wrapper">
                 <div class="form-wrapper">
-                    <form id="contact-form" action="email-from-user.php" method="POST">
+                    <form id="contact-form" action="https://formspree.io/meqknkqz" method="POST">
                         <h3>Contact Us</h3>
                         <div class="form-control">
                             <span id="alert-name" class="alert-wrapper">
@@ -251,7 +259,7 @@
                             Submit <i class="fal fa-arrow-right"></i>
                         </button>
                     </form>
-                    <p class="notification-message"></p>
+                    <p id="notification-message"></p>
                 </div>
             </div>
         </div>
@@ -269,9 +277,14 @@
                     <i class="fad fa-envelope"></i> <a href="mailto:olympia@gmail.com"> &nbsp;olympia@gmail.com</a>
                 </p>
             </div>
+
+            <div class="contact-map">
+                <div class="google-map"><iframe frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCy9r70T3NYf3PhvVflTo0_zdif2_IoIYs&amp;q=place_id:ChIJlTpC7E_TWUcRBrVW8MPUeSc"
+                        allowfullscreen=""></iframe></div>
+            </div>
         </div>
     </div>
-
     <script src="main.js"></script>
     <script src="send-email.jq.js"></script>
     <script src="shuffle.jq.js"></script>
@@ -280,12 +293,40 @@
 
 
     <!-- Smooth scroll -->
-    <script src="static/smooth-scroll-master/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- <script src="static/smooth-scroll-master/dist/smooth-scroll.polyfills.min.js"></script>
 
     <script>
         const scroll = new SmoothScroll('a[href*="#"]', {
             speed: 750,
             speedAsDuration: true
+        });
+    </script> -->
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $('.logo a, .nav-links a, #button-continue a').on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
         });
     </script>
 
@@ -360,7 +401,39 @@
             }
         });
 
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+
+                let position = $(this).scrollTop();
+                if (position >= 1000) {
+                    $('#to-top').css('display', 'block');
+                }
+                else {
+                    $('#to-top').css('display', 'none');
+                }
+            });
+        });
+
     </script>
+
+    <script>
+        setTimeout(function () {
+            $('.sk-center').fadeToggle();
+        }, 1000);
+    </script>
+
+    <!-- <script>
+        $(document).ready(function () {
+            //Preloader
+            preloaderFadeOutTime = 3200;
+            function hidePreloader() {
+                var preloader = $('.sk-center');
+                preloader.fadeOut(preloaderFadeOutTime);
+            }
+            hidePreloader();
+        });
+    </script> -->
 
 </body>
 

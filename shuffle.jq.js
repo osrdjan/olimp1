@@ -141,21 +141,29 @@
 
 
 
-$(function () {
+// $(function () {
 
-    // container is the DOM element;
+//     // container is the DOM element;
 
-     var container1 = $("#shuffle1");
-    //var container2 = $("#shuffle2");
-    //var container2 = $(".banner-txt");
+//      var container1 = $("#shuffle1");
+//     //var container2 = $("#shuffle2");
+//     //var container2 = $(".banner-txt");
 
-    // Shuffle the contents of container
-    container1.shuffleLetters();
-    //container2.shuffleLetters();
-    //container2.shuffleLetters();
+//     // Shuffle the contents of container
+//     container1.shuffleLetters();
+//     //container2.shuffleLetters();
+//     //container2.shuffleLetters();
     
 
-});
+// });
+
+setTimeout(function(){
+
+    var container1 = $("#shuffle1");
+    container1.css("visibility", "visible");
+    container1.shuffleLetters();
+
+},1000);
 
 setTimeout(function(){
 
@@ -163,4 +171,4 @@ setTimeout(function(){
     container2.css("visibility", "visible");
     container2.shuffleLetters();
 
-},900);
+},1900);

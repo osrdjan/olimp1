@@ -4,73 +4,63 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Gizmo';
-    src: url("static/fonts2/ss-gizmo-webfont.woff2") format("woff2");
-    font-display: swap
-}
-
-
-@font-face {
-    font-family: 'NexusSans';
-    src: url("static/fonts2/nexussanswebpro-regular.woff2") format("woff2");
-    font-display: swap
-}
-
-
-@font-face {
-    font-family: 'NexusSans';
-    font-style: italic;
-    src: url("static/fonts2/nexussanswebpro-italic.woff2") format("woff2");
-    font-display: swap
-}
-
-
-@font-face {
-    font-family: 'NexusSans';
-    font-weight: 700;
-    src: url("static/fonts2/nexussanswebpro-bold.woff2") format("woff2");
-    font-display: swap
-}
-
-
-@font-face {
-    font-family: 'NexusSans';
-    font-style: italic;
-    font-weight: 700;
-    src: url("static/fonts2/nexussanswebpro-bolditalic.woff2") format("woff2");
-    font-display: swap
-}
-
-
-@font-face {
-    font-family: 'ElsevierDisplayLight';
-    src: url("static/fonts2/elsevierdisplay_light.woff2") format("woff2");
-    font-display: swap
-}
-
-@font-face {
-    font-style: italic;
-    font-family: 'ElsevierDisplayLight';
-    src: url("static/fonts2/elsevierdisplaylight-italic.woff2") format("woff2");
-    font-display: swap
-}
-
 body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
     display: flex;
     flex-direction: column;
-    font-feature-settings: 'kern'1, 'liga'1, 'pnum'1, 'tnum'0, 'onum'1, 'lnum'0, 'dlig'0;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-    /* font-family: nexussans, arial, sans-serif; */
-    color: #53565a;
     font-family: Poppins, Roboto, sans-serif;
     /* background-color: #133f63; */
     overflow-x: hidden;
 }
+
+/* Preloader*/
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 160px;
+    height: 160px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 2px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 80px;
+      left: 80px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 160px;
+      height: 160px;
+      opacity: 0;
+    }
+  }
+  
+
+.sk-center {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #133f63;
+    z-index: 9999;
+} 
 
 /* Navigacija */
 
@@ -114,6 +104,28 @@ nav {
     color: rgb(236, 236, 236);
 }
 
+#to-top {
+    display: none;
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    z-index: 100;
+}
+
+#to-top i {
+    font-size: 3rem;
+    color: rgb(180, 180, 180);
+}
+
+/* #to-top a {
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+
 /* Logo */
 
 .logo {
@@ -121,10 +133,7 @@ nav {
     display: flex;
     align-items: center;
     font-size: 2.2rem;
-    /* font-family: Roboto, sans-serif; */
-    font-family: elsevierdisplaylight, arial, sans-serif;
-    /* font-family: gizmo, "Segoe UI Symbol", "Lucida Grande", "Arial Unicode MS", sans-serif; */
-
+    font-family: Roboto, sans-serif;
     padding: 0.1rem;
     transition: font-size 0.4s ease-in-out;
 }
@@ -183,11 +192,6 @@ nav {
 /* Navigacioni linkovi */
 
 .nav-links {
-    max-width: 48.41rem;
-    font-family: elsevierdisplaylight, arial, sans-serif;
-    font-feature-settings: 'kern'1, 'liga'1, 'pnum'1, 'tnum'0, 'onum'1, 'lnum'0, 'dlig'1;
-    /* font-weight: 100; */
-    /* margin-bottom: .373rem; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -284,8 +288,9 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("AI.jpeg");
+    background-image: url("AI1.jpg");
     background-size: cover;
+    background-position: center;
     z-index: 6;
     width: 100vw;
     height: 100vh;
@@ -309,11 +314,6 @@ nav {
 
 .banner-txt {
     color: rgb(236, 236, 236);
-    max-width: 48.41rem;
-    font-family:  nexussans,arial, sans-serif;
-    font-feature-settings: 'kern'1, 'liga'1, 'pnum'1, 'tnum'0, 'onum'1, 'lnum'0, 'dlig'1;
-    /* font-weight: 100; */
-    margin-bottom: .373rem;
     position: absolute;
     text-align: center;
     z-index: 8;
@@ -325,8 +325,49 @@ nav {
     margin-bottom: 0.5rem;
 }
 
+#shuffle1 {
+    visibility: hidden;
+}
+
 #shuffle2 {
     visibility: hidden;
+}
+
+#button-continue {
+    position: absolute;
+    bottom: 10%;
+    z-index: 10;
+    width: 9rem;
+    height: 3.5rem;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 2rem;
+    opacity: 0.8;
+    transition: all 0.5s ease-out;
+    background-color: transparent;
+}
+
+#button-continue:hover {
+    opacity: 1;
+    background-color: rgba(105,174,233,0.1);
+    border-width: 2px;
+}
+
+#button-continue a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgb(236, 236, 236);
+}
+
+#button-continue:hover a {
+    font-weight: 400;
 }
 
 /* Baner kraj */
@@ -350,10 +391,12 @@ nav {
         padding: 0;
         justify-content: center;
     }
+
     /* Izgled za mobilni */
     #banner {
         height: 100vh;
     }
+
     /* Promena navigacionih linkova */
     .nav-links {
         display: flex;
@@ -371,30 +414,37 @@ nav {
         /* transform: translateY(-100%);
         transition: transform 1s ease-in-out;    */
     }
+
     .custom-nav-links {
         top: 46px;
     }
+
     .custom-nav-links-transition {
         transition: all 0.1s ease-in-out;
         /* transition: none; */
     }
+
     .nav-links li {
         border-bottom: 1px solid #596773;
         opacity: 0;
     }
+
     .nav-links li:hover .custom-underline::after {
         width: 0%;
     }
+
     .nav-links li:hover {
         background-color: #196eb4;
         transition: 0.75s;
         border-radius: 12px;
     }
+
     /* Promena širine navigacionih linkova*/
     .nav-links a {
         display: block;
         width: 100%;
     }
+
     /* Podešavanja hamburger menija*/
     .burger {
         display: block;
@@ -406,6 +456,7 @@ nav {
         width: 38px;
         cursor: pointer;
     }
+
     /* .burger:hover {
         background: #0c2940;
     } */
@@ -417,6 +468,7 @@ nav {
     .navbar {
         justify-content: flex-start;
     }
+
     .banner-txt h1 {
         font-size: 2rem;
     }
@@ -442,6 +494,7 @@ nav {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0px);
