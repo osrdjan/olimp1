@@ -7,7 +7,7 @@
 }
 
 .contact-footer {
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem;
     display: flex;
     background-color: rgb(75, 75, 75);
     color: white;
@@ -26,9 +26,9 @@
 .contact-content h3 {
     color: #69aee9;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2.5rem;  
     letter-spacing: 1px;
-    padding: 1.5rem 0 2rem 0;
+    padding-bottom: 2rem;
 }
 
 .contact-content p {

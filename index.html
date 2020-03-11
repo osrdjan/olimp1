@@ -22,34 +22,32 @@
 </head>
 
 <body>
-    <!-- Preloader && To_top -->
+    <!-- Preloader -->
     <div class="sk-center">
         <div class="lds-ripple">
             <div></div>
             <div></div>
         </div>
     </div>
-
-    <a href="#" id="to-top"><i class="fas fa-chevron-square-up"></i></a>
-    <!-- Preloader && To_top END-->
+    <!-- PreloaderEND-->
 
     <!-- Navigacija  -->
     <nav class="navbar">
         <div class="nav-background"></div>
         <!-- Logo -->
         <div class="logo">
-            <a href="#" class="logo-img-link"><img src="logo.png" alt="logo" class="logo-img"></a>
-            <a href="#" class="logo-txt">Olympia</a>
-            <a href="#" class="logo-dot">.</a>
+            <a href="#banner" class="logo-img-link"><img src="logo.png" alt="logo" class="logo-img"></a>
+            <a href="#banner" class="logo-txt">Olympia</a>
+            <a href="#banner" class="logo-dot">.</a>
             <div style="color: #55acee" class="la-ball-scale-multiple la-3x">
                 <div></div>
                 <div></div>
             </div>
-            <a href="#" class="logo-txt">AI</a>
+            <a href="#banner" class="logo-txt">AI</a>
         </div>
         <!-- Navigacioni linkovi -->
         <ul class="nav-links">
-            <li><a href="#" class="custom-underline active">Home</a></li>
+            <li><a href="#banner" class="custom-underline active">Home</a></li>
             <li><a href="#about" class="custom-underline active">About Us</a></li>
             <li><a href="#work" class="custom-underline active">Our Work</a></li>
             <li><a href="#" class="custom-underline active">Projects</a></li>
@@ -62,6 +60,9 @@
             <div class="line3"></div>
         </div>
     </nav>
+    <!-- To-top -->
+    <a href="#banner" id="to-top"><i class="fas fa-chevron-square-up"></i></a>
+
     <!-- Navigacija END -->
 
     <!-- Baner -->
@@ -305,7 +306,7 @@
     <script>
         $(document).ready(function () {
             // Add smooth scrolling to all links in navbar + footer link
-            $('.logo a, .nav-links a, #button-continue a').on('click', function (event) {
+            $('a[href*="#"]').on('click', function (event) {
 
                 // Make sure this.hash has a value before overriding default behavior
                 if (this.hash !== "") {
@@ -419,7 +420,8 @@
 
     <script>
         setTimeout(function () {
-            $('.sk-center').fadeToggle();
+            $('.sk-center').fadeToggle(1000);
+            $('body').css('overflow-y', 'visible');
         }, 1000);
     </script>
 
