@@ -166,23 +166,27 @@ window.addEventListener("DOMContentLoaded", function () {
     // get the form elements defined in your form HTML above
 
     var form = document.getElementById("contact-form");
-    // var name = document.getElementById("form-name");
-    // var email = document.getElementById("form-email");
-    // var subject = document.getElementById("form-subject");
-    // var message = document.getElementById("form-message");
-    // var button = document.getElementById("form-submit");
-    var status = document.getElementById("notification-message");   
+    var name = document.getElementById("form-name");
+    var email = document.getElementById("form-email");
+    var subject = document.getElementById("form-subject");
+    var message = document.getElementById("form-message");
+    var button = document.getElementById("form-submit");
+    var status = document.getElementById("notification-message");
 
     // Success and Error functions for after the form is submitted
 
     function success() {
         form.reset();
         form.style = "display: none ";
+        // email.style = "display: none ";
+        // subject.style = "display: none ";
+        // message.style = "display: none ";
+        // button.style = "display: none ";
         status.innerHTML = "Thanks for contacting us!<br>We will get back to you soon.";
     }
 
     function error() {
-        status.innerHTML = "Oops! There was a problem.";
+        status.innerHTML = "Email address seems invalid!";
     }
 
     // handle the form submission event
@@ -200,9 +204,15 @@ window.addEventListener("DOMContentLoaded", function () {
         var email = $("#form-email").val();
         var subject = $("#form-subject").val();
         var message = $("#form-message").val();
-        if ($.trim(name) == '' || $.trim(subject) == ''|| $.trim(message) == '' || $.trim(email) == '' || !validateEmail(email)) {
-            error();
+        if ($.trim(name) == '' || $.trim(subject) == '' || $.trim(message) == '' || $.trim(email) == '') {
+            status.innerHTML = "Please fill all fields!";
+            $('#notification-message').css('color', 'rgb(180, 0, 0)');
         }
+        else if ($.trim(name) == '' || $.trim(subject) == '' || $.trim(message) == '' || $.trim(email) == '' || !validateEmail(email)) {
+            error();
+            $('#notification-message').css('color', 'rgb(180, 0, 0)');
+        }
+
         else {
             ajax(form.method, form.action, data, success, error);
         }
