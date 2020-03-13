@@ -24,19 +24,28 @@
     width: 50%;
 }
 
-.contact-content h3 {
+/* .contact-content h3 {
     color: #69aee9;
     font-weight: 600;
     font-size: 2.5rem;
     letter-spacing: 1px;
     padding-bottom: 2rem;
-}
+} */
 
 .contact-content p {
     font-size: 1.2rem;
     line-height: 2.5rem;
     font-weight: 300;
     width: auto;
+}
+
+.linsk {
+    position: relative;
+    left: -1px;
+    color: rgb(236, 236, 236);    
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-right: 0.5rem;
 }
 
 .contact-content a {
