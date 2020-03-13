@@ -492,6 +492,10 @@ nav {
         font-size: 2rem;
     }
 
+    #to-top i {
+        font-size: 2.25rem;
+    }
+
 }
 
 /* Klasa koja se poziva pri otvaranju hamburger menija*/

@@ -457,7 +457,7 @@ label {
 } */
 
 #notification-message {
-    width: 50%; 
+    width: 50%;
     position: relative;
     min-height: 4rem;
     text-align: center;
@@ -544,6 +544,11 @@ label {
 
     .contact-content {
         width: 100%;
+    }
+
+    #contact-copyright {
+        font-size: 0.9rem;
+        
     }
 }
 
