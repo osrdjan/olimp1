@@ -154,12 +154,20 @@ nav {
     padding-bottom: 2px;
 }
 
+/* .custom-logo-txt {
+    width: 109px;
+} */
+
 .logo-dot {
     position: relative;
     text-decoration: none;
     color: #69aee9;
     padding-bottom: 2px;
 }
+
+/* .custom-logo-dot {
+    width: 8px;
+} */
 
 .logo-img-link {
     height: 48px;
@@ -365,6 +373,7 @@ nav {
     font-size: 1.3rem;
     font-weight: 300;
     color: rgb(236, 236, 236);
+    -webkit-tap-highlight-color: transparent;
 }
 
 #button-continue:hover a {

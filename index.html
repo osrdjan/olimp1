@@ -34,25 +34,26 @@
     <!-- Navigacija  -->
     <nav class="navbar">
         <div class="nav-background"></div>
-        <!-- Logo -->
+        <!-- Logo -->        
         <div class="logo">
             <a href="#banner" class="logo-img-link"><img src="logo.png" alt="logo" class="logo-img"></a>
             <a href="#banner" class="logo-txt">Olympia</a>
-            <a href="#banner" class="logo-dot">.</a>
+            <a href="#banner" class="logo-dot">.</a>   
             <div style="color: #55acee" class="la-ball-scale-multiple la-3x">
                 <div></div>
                 <div></div>
-            </div>
+            </div>     
             <a href="#banner" class="logo-txt">AI</a>
         </div>
         <!-- Navigacioni linkovi -->
-        <ul class="nav-links">
+        <ul class="nav-links">            
             <li><a href="#banner" class="custom-underline active">Home</a></li>
             <li><a href="#about" class="custom-underline active">About Us</a></li>
             <li><a href="#work" class="custom-underline active">Our Work</a></li>
             <li><a href="#" class="custom-underline active">Projects</a></li>
             <li><a href="#contact" class="custom-underline active">Contact</a></li>
         </ul>
+            
         <!-- Hamburger meni -->
         <div class="burger">
             <div class="line1"></div>
@@ -255,7 +256,7 @@
                     </div>
                     <button id="form-submit" type="submit" name="submit">
                         Submit <i class="fal fa-arrow-right"></i>
-                    </button>                
+                    </button>
                 </form>
                 <div id="notification-message"></div>
             </div>
@@ -280,7 +281,7 @@
                         allowfullscreen=""></iframe></div>
             </div>
         </div>
-        <div id="contact-copyright">© 2020 Copyright: Olympia.rs</div>
+        <div id="contact-copyright"> Copyright © 2020 Olympia.AI &nbsp;|&nbsp; All rights reserved</div>
     </div>
     <script src="main.js"></script>
     <script src="send-email.jq.js"></script>
@@ -410,6 +411,21 @@
                     $('#to-top').css('display', 'none');
                 }
             });
+        });
+
+        $(".nav-links").hover(function () {
+            $('.la-ball-scale-multiple>div').addClass('aaa');
+            $('.la-ball-scale-multiple>div:nth-child(2)').addClass('bbb');
+            $('.la-ball-scale-multiple>div:nth-child(3)').addClass('ccc');
+            $('.la-3x').addClass('la-3x-nav-links');
+            $('.custom-la-3x').addClass('custom-la-3x-nav-links');
+        });
+        $(".nav-links").mouseleave(function () {
+            $('.la-ball-scale-multiple>div').removeClass('aaa');
+            $('.la-ball-scale-multiple>div:nth-child(2)').removeClass('bbb');
+            $('.la-ball-scale-multiple>div:nth-child(3)').removeClass('ccc');
+            $('.la-3x').removeClass('la-3x-nav-links');
+            $('.custom-la-3x').removeClass('custom-la-3x-nav-links');
         });
 
     </script>
