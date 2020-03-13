@@ -62,7 +62,7 @@
         </div>
     </nav>
     <!-- To-top -->
-    <a href="#banner" id="to-top"><i class="fas fa-chevron-square-up"></i></a>
+    <a href="#banner" id="to-top"><i class="fad fa-chevron-double-up"></i></a>
 
     <!-- Navigacija END -->
 
@@ -413,9 +413,10 @@
             });
         });
 
+        $(document).ready(myfunction);
+        $(window).on('resize', myfunction);
 
-        $(window).resize(function () {
-
+        function myfunction() {
             if ($(window).width() >= 820) {
 
                 $(".nav-links").hover(function () {
@@ -434,8 +435,7 @@
                 });
 
             }
-
-        });
+        }
 
 
     </script>

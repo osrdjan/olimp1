@@ -20,34 +20,38 @@ body {
     position: relative;
     width: 160px;
     height: 160px;
-  }
-  .lds-ripple div {
+}
+
+.lds-ripple div {
     position: absolute;
     border: 2px solid #fff;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-  }
-  .lds-ripple div:nth-child(2) {
+}
+
+.lds-ripple div:nth-child(2) {
     animation-delay: -0.5s;
-  }
-  @keyframes lds-ripple {
+}
+
+@keyframes lds-ripple {
     0% {
-      top: 80px;
-      left: 80px;
-      width: 0;
-      height: 0;
-      opacity: 1;
+        top: 80px;
+        left: 80px;
+        width: 0;
+        height: 0;
+        opacity: 1;
     }
+
     100% {
-      top: 0px;
-      left: 0px;
-      width: 160px;
-      height: 160px;
-      opacity: 0;
+        top: 0px;
+        left: 0px;
+        width: 160px;
+        height: 160px;
+        opacity: 0;
     }
-  }
-  
+}
+
 
 .sk-center {
     position: fixed;
@@ -61,7 +65,7 @@ body {
     align-items: center;
     background-color: rgb(20, 50, 100);
     z-index: 9999;
-} 
+}
 
 /* Navigacija */
 
@@ -115,7 +119,7 @@ nav {
 
 #to-top i {
     font-size: 3rem;
-    color: rgb(180, 180, 180);
+    color: rgb(142, 151, 194);
 }
 
 /* #to-top a {
@@ -351,13 +355,13 @@ nav {
     border: 1px solid rgb(236, 236, 236);
     border-radius: 2rem;
     opacity: 0.8;
-    transition: all 0.3s cubic-bezier(.2,.5,.8,.5);
+    transition: all 0.3s cubic-bezier(.2, .5, .8, .5);
     background-color: transparent;
 }
 
 #button-continue:hover {
     opacity: 1;
-    background-color: rgba(105,174,233,0.1);
+    background-color: rgba(105, 174, 233, 0.1);
     border-width: 2px;
 }
 
@@ -406,6 +410,11 @@ nav {
     #banner {
         height: 100vh;
     }
+
+    #to-top i {
+        font-size: 2.5rem;
+    }
+
 
     /* Promena navigacionih linkova */
     .nav-links {
@@ -482,6 +491,7 @@ nav {
     .banner-txt h1 {
         font-size: 2rem;
     }
+
 }
 
 /* Klasa koja se poziva pri otvaranju hamburger menija*/
