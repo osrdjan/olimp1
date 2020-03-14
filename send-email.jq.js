@@ -181,6 +181,8 @@ window.addEventListener("DOMContentLoaded", function () {
         // subject.style = "display: none ";
         // message.style = "display: none ";
         // button.style = "display: none ";
+        $('#notification-message').addClass('form-success');
+        $('.form-wrapper').css('background', 'transparent');
         status.innerHTML = "Thanks for contacting us!<br>We will get back to you soon.";
     }
 
